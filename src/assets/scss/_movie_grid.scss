@@ -1,10 +1,21 @@
 .movie-grid {
-	display: flex;
 	justify-content: center;
+	margin: 0 1rem;
 
 	.card {
 		min-width: 30%;
 		padding: 0;
+
+		// .card-img-overlay {
+		// 	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+		// 	display: none;
+		// 	align-items: end;
+		// 	padding-bottom: 6rem;
+
+		// 	&:hover {
+		// 		display: flex;
+		// 	}
+		// }
 
 		img {
 			border-bottom-left-radius: 0;
