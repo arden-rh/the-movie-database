@@ -14,7 +14,7 @@ function App() {
 		<div id="App">
 			<Navigation />
 
-			<Container>
+			<Container className='page-body'>
 				<Routes>
 					<Route path="/" element={<HomePage />} />
 					<Route path='/movies/'>

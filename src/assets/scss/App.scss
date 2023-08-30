@@ -1,1 +1,15 @@
 @import 'bootstrap/scss/bootstrap';
+
+@import 'config';
+@import 'movie_grid';
+
+body {
+	background-color: $color-background;
+
+}
+
+#App {
+	.page-body {
+		padding: 3rem 0;
+	}
+}
