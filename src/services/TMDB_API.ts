@@ -1,5 +1,5 @@
 /**
- * Service for communicating with the json-server backend
+ * Service for communicating with the TMDB database
  */
 import axios from 'axios'
 import { Movie_Genres } from '../types/TMDB.types'
@@ -18,13 +18,7 @@ const instance = axios.create({
 	}
 })
 
-/* const get = async <T>(endpoint: string) => {
-	const response = await instance.get<T>(endpoint)
-
-	return response.data
-} */
-
-const get = async<T>(endpoint: string) => {
+const get = async <T>(endpoint: string) => {
 	const response = await instance.get<T>(endpoint)
 
 	return response.data
