@@ -18,7 +18,7 @@ const MovieGrid: React.FC<IProps> = ({ data }) => {
 	}
 
 	return (
-		<Row xs={1} sm={3} md={3} lg={4} className='g-3 movie-grid'>
+		<Row xs={1} sm={3} md={4} lg={5} className='g-3 movie-grid'>
 			{data.map(movie => (
 				<Card
 					bg='dark'
@@ -43,8 +43,9 @@ const MovieGrid: React.FC<IProps> = ({ data }) => {
 						<Button variant="primary">Go somewhere</Button>
 					</Card.Body> */}
 					<ListGroup className="list-group-flush">
-						<ListGroup.Item>{movie.title}</ListGroup.Item>
+						<ListGroup.Item>Title: {movie.title}</ListGroup.Item>
 						<ListGroup.Item>Release date: {movie.release_date}</ListGroup.Item>
+						<ListGroup.Item>Average vote: {movie.vote_average.toFixed(1)}</ListGroup.Item>
 					</ListGroup>
 				</Card>
 			))}

@@ -4,9 +4,10 @@ import { Routes, Route } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import HomePage from './pages/HomePage'
 import LatestMoviesPage from './pages/LatestMoviesPage'
-import Navigation from './components/Navigation'
+import Navigation from './pages/partials/Navigation'
 import PopularMoviesPage from './pages/PopularMoviesPage'
 import TopMoviesPage from './pages/TopMoviesPage'
+import MovieGenrePage from './pages/MovieGenrePage'
 
 function App() {
 
@@ -25,8 +26,9 @@ function App() {
 
 
 					<Route path='/movies/genres/'>
+						<Route path=':genre' element={<MovieGenrePage />} />
 						<Route path='' element={<HomePage />} />
-						<Route path='action' element={<LatestMoviesPage />} />
+						{/* <Route path='action' element={<LatestMoviesPage />} />
 						<Route path='adventure' element={<HomePage />} />
 						<Route path='animation' element={<HomePage />} />
 						<Route path='comedy' element={<HomePage />} />
@@ -44,7 +46,7 @@ function App() {
 						<Route path='tv-movie' element={<HomePage />} />
 						<Route path='thriller' element={<HomePage />} />
 						<Route path='war' element={<HomePage />} />
-						<Route path='western' element={<HomePage />} />
+						<Route path='western' element={<HomePage />} /> */}
 					</Route>
 					{/* <Route path="*" element={<NotFound />} /> */}
 				</Routes>
