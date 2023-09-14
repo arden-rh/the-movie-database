@@ -13,6 +13,7 @@ export type Movie_Genres = {
 }
 
 export type Movie = {
+	adult: boolean
 	backdrop_path: string
 	genres: Movie_Genre[]
 	homepage: string
@@ -34,6 +35,8 @@ export type NowPlaying_Movies = Movie_Results & { dates : Dates}
 export type Movie_Results = {
 	page: number
 	results: Movie[]
+	total_pages: number
+	total_results: number
 }
 
 export type Person = {

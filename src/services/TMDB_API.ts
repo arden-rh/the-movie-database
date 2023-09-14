@@ -28,8 +28,20 @@ const get = async <T>(endpoint: string) => {
 // 	return get(id)
 // }
 
-export const getNowPlayingMovies = () => {
-	return get<NowPlaying_Movies>('movie/now_playing?language=en-US&page=1')
+export const getNowPlayingMovies = (page: number) => {
+	return get<NowPlaying_Movies>(`movie/now_playing?include_adult=false&language=en-US&page=${page}`)
+}
+
+export const getTrendingMovies = (page: number) => {
+	return get<Movie_Results>(`trending/movie/day?include_adult=false&language=en-US&page=${page}`)
+}
+
+export const getTopRatedMovies = (page: number) => {
+	return get<Movie_Results>(`movie/top_rated?include_adult=false&language=en-US&page=${page}`)
+}
+
+export const getMoviesByGenre = (genre: number, page: number) => {
+	return get<Movie_Results>(`discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${genre}`)
 }
 
 export const getMovieGenres = () => {
