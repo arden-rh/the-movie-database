@@ -65,14 +65,26 @@ const MovieGenrePage = () => {
 
 	useEffect(() => {
 
-		if (!data) {
-			return
-		}
+		setErrorMsg(null)
 
-		const id = findGenreId(data.genres)
+		try {
 
-		if (id) {
-			setMovieGenreId(id)
+			if (!data) {
+				throw new Error('Unable to load data')
+			}
+
+			const id = findGenreId(data.genres)
+
+			if (id) {
+				setMovieGenreId(id)
+			}
+
+		} catch (e) {
+
+			if (e instanceof Error) {
+				setErrorMsg(e.message)
+			}
+
 		}
 
 	}, [data, findGenreId])
@@ -80,12 +92,13 @@ const MovieGenrePage = () => {
 	useEffect(() => {
 
 		setMoviesData(null)
+		setLoadingMovies(true)
 		setMovieGenre(genre as string)
 
 		if (movies) {
 			// fetchMoviesData(movies)
 			setMoviesData(movies)
-			// setLoadingMovies(false)
+			setLoadingMovies(false)
 		}
 
 	}, [movies, genre])
