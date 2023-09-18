@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from "react-router-dom"
 import MovieGrid from '../components/MovieGrid'
 import { useQuery } from '@tanstack/react-query'
@@ -16,11 +16,18 @@ const MovieGenrePage = () => {
 	const [movieGenre, setMovieGenre] = useState<string>('')
 	// const [movies, setMovies] = useState<Movie_Results | null>(null)
 	const [loadingMovies, setLoadingMovies] = useState(false)
+	const [errorMsg, setErrorMsg] = useState<string | null>(null)
 	// const [movieGenres, setMovieGenres] = useState<Movie_Genre[] | null>(null)
 
-	const [movieData, setMovieData] = useState<Movie_Results | null>(null)
+	const [moviesData, setMoviesData] = useState<Movie_Results | null>(null)
 
 	const { data } = useMovieGenres()
+
+	const { data: movies, isError, isLoading, refetch, isFetching } = useQuery({
+		queryKey: ['movies_by_genre'],
+		queryFn: () => getMoviesByGenre(movieGenreId, 1),
+		enabled: !!movieGenreId
+	})
 
 	const findGenreId = useCallback((data: Movie_Genre[]) => {
 
@@ -43,22 +50,30 @@ const MovieGenrePage = () => {
 
 
 		} catch (e) {
+			setErrorMsg(e.message)
 			console.log('error', e)
 		}
 
 	}, [movieGenre])
 
+	const fetchMoviesData = useCallback((movies: Movie_Results) => {
 
-	const { data: movies, isError, isLoading, refetch } = useQuery({
-		queryKey: ['movies_by_genre'],
-		queryFn: () => getMoviesByGenre(movieGenreId, 1),
-		enabled: !!movieGenreId
-	})
+		setTimeout(() => {
+			refetch({ throwOnError: true })
+			setMoviesData(movies)
 
+			console.log('fetchmoviesdata')
+
+		}, 500)
+
+		// setMoviesData(movies)
+
+
+	}, [refetch])
 
 	useEffect(() => {
 
-		console.log('fire useeffect')
+		console.log('fire useeffect find id')
 
 		setLoadingMovies(true)
 
@@ -82,25 +97,53 @@ const MovieGenrePage = () => {
 
 		}
 
-		setLoadingMovies(false)
+		// setLoadingMovies(false)
 
 	}, [data, findGenreId])
 
 	useEffect(() => {
 
-		console.log('firing use effect genre')
-		setLoadingMovies(true)
+		console.log('fire set movies')
+		// setLoadingMovies(true)
+		setMoviesData(null)
 		setMovieGenre(genre as string)
 
-	}, [genre])
+		if (movies) {
+
+			console.log('fire refetch')
+			fetchMoviesData(movies)
+
+			// setMoviesData(movies)
+			setLoadingMovies(false)
+		}
+
+	}, [movies, genre, fetchMoviesData])
 
 	return (
 		<div>
 			<h1>Genre: <span className='text-capitalize'>{genre}</span></h1>
 
-			{isLoading || loadingMovies && <span className='text-capitalize'>Loading...</span>}
+			{/* {loadingMovies && <span className='text-capitalize'>Loading...</span>} */}
 
-			{!loadingMovies && movies && <MovieGrid data={movies.results} />}
+			{/* {isFetching && <span className='text-capitalize'>Fetching...</span>} */}
+
+			{/* {!isFetching && !moviesData && <span className='text-capitalize'>Getting that data</span>} */}
+
+			{!moviesData && <span className='text-capitalize'>Getting that data 4</span>}
+
+			{moviesData && loadingMovies && <span className='text-capitalize'>Getting that data 4</span>}
+
+
+			{/* {moviesData && loadingMovies && <span className='text-capitalize'>Data 4</span>} */}
+
+
+			{/* {!loadingMovies && movies && <MovieGrid data={movies.results} />} */}
+
+			{/* {!isFetching && !loadingMovies && moviesData && <MovieGrid data={moviesData.results} />} */}
+
+			{!isFetching && moviesData && <MovieGrid data={moviesData.results} />}
+
+
 
 		</div>
 	)
