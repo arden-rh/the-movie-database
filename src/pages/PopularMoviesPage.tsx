@@ -4,15 +4,19 @@ import MovieGrid from '../components/MovieGrid'
 
 const PopularMoviesPage = () => {
 
-	const useTrendingMovies = ( page: number ) => {
+	const useTrendingMovies = (page: number) => {
 		return useQuery(['trending'], () => getTrendingMovies(page))
 	}
 
-	const { data } = useTrendingMovies(1)
+	const { data, isError, isFetching } = useTrendingMovies(1)
 
 	return (
 		<>
 			<h1>The Trending Movies</h1>
+
+			{isError && <span>Something went wrong with the request</span>}
+
+			{isFetching && <span>Loading...</span>}
 
 			{data && <MovieGrid data={data.results} />}
 		</>

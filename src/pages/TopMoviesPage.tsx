@@ -4,15 +4,19 @@ import MovieGrid from '../components/MovieGrid'
 
 const TopMoviesPage = () => {
 
-	const useTopRatesMovies = ( page: number ) => {
+	const useTopRatesMovies = (page: number) => {
 		return useQuery(['top_rated'], () => getTopRatedMovies(page))
 	}
 
-	const { data } = useTopRatesMovies(1)
+	const { data, isError, isFetching } = useTopRatesMovies(1)
 
 	return (
 		<>
 			<h1>Top Rated Movies of All Time</h1>
+
+			{isError && <span>Something went wrong with the request</span>}
+
+			{isFetching && <span>Loading...</span>}
 
 			{data && <MovieGrid data={data.results} />}
 		</>
