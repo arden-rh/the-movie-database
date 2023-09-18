@@ -1,23 +1,16 @@
+import { Actor_Credit, Credit_Details } from "./TMDB_Person.types"
+
 type Dates = {
 	maximum: string
 	minimum: string
 }
 
-export type Movie_Genre = {
-	id: number
-	name: string
-}
-
-export type Movie_Genres = {
-	genres: Movie_Genre[]
-}
-
 export type Movie = {
+	id: number
 	adult: boolean
 	backdrop_path: string
 	genres: Movie_Genre[]
 	homepage: string
-	id: number
 	imdb_id: string
 	original_language: string
 	original_title: string
@@ -30,7 +23,21 @@ export type Movie = {
 	vote_average: number
 }
 
-export type NowPlaying_Movies = Movie_Results & { dates : Dates}
+export type Movie_Cast_Credit = {
+	id: number
+	cast: Actor_Credit[]
+}
+
+export type Movie_Credit = Omit<Movie, 'genres' | 'homepage' | 'imdb_id' > & Credit_Details & { genre_ids: number[] }
+
+export type Movie_Genre = {
+	id: number
+	name: string
+}
+
+export type Movie_Genres = {
+	genres: Movie_Genre[]
+}
 
 export type Movie_Results = {
 	page: number
@@ -39,14 +46,5 @@ export type Movie_Results = {
 	total_results: number
 }
 
-export type Person = {
-	also_known_as: string[]
-	biography: string
-	birthday: string
-	deathday: string | null
-	id: number
-	imdb_id: string
-	name: string
-	place_of_birth: string
-	profile_path: string
-}
+export type NowPlaying_Movies = Movie_Results & { dates : Dates}
+

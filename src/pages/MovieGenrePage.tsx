@@ -1,5 +1,5 @@
 import { getMoviesByGenre } from '../services/TMDB_API'
-import { Movie_Genre, Movie_Results } from '../types/TMDB.types'
+import { Movie_Genre, Movie_Results } from '../types/TMDB_Movie.types'
 import { useCallback, useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import { useQuery } from '@tanstack/react-query'

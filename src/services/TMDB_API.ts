@@ -2,7 +2,8 @@
  * Service for communicating with the TMDB database
  */
 import axios from 'axios'
-import { Movie_Genres, Movie_Results, NowPlaying_Movies } from '../types/TMDB.types'
+import { Actor, Actor_Movie_Credits } from '../types/TMDB_Person.types'
+import { Movie, Movie_Cast_Credit, Movie_Genres, Movie_Results, NowPlaying_Movies } from '../types/TMDB_Movie.types'
 
 const API_KEY = import.meta.env.VITE_ACCESSTOKEN
 
@@ -24,9 +25,21 @@ const get = async <T>(endpoint: string) => {
 	return response.data
 }
 
-// export const getMovie = (id: string) => {
-// 	return get(id)
-// }
+export const getActor = (personId: number) => {
+	return get<Actor>(`person/${personId}`)
+}
+
+export const getActorMovieCredits = (personId: number) => {
+	return get<Actor_Movie_Credits>(`person/${personId}/movie_credits`)
+}
+
+export const getMovieCastCredits = (movieId: number) => {
+	return get<Movie_Cast_Credit>(`movie/${movieId}/credits`)
+}
+
+export const getMovie = (movieId: number) => {
+	return get<Movie>(`movie/${movieId}?language=en-US`)
+}
 
 export const getNowPlayingMovies = (page: number) => {
 	return get<NowPlaying_Movies>(`movie/now_playing?include_adult=false&language=en-US&page=${page}`)
