@@ -5,7 +5,7 @@ import MovieGrid from '../components/MovieGrid'
 
 const LatestMoviesPage = () => {
 
-	const useLastestMovies = ( page: number ) => {
+	const useLastestMovies = (page: number) => {
 		return useQuery(['now_playing'], () => getNowPlayingMovies(page))
 	}
 
@@ -13,7 +13,9 @@ const LatestMoviesPage = () => {
 
 	return (
 		<>
-			<h1>The Latest Movies</h1>
+			<div className='category-page-hero'>
+				<h1>The Latest Movies</h1>
+			</div>
 
 			{isError && <span>Something went wrong with the request</span>}
 

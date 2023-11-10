@@ -1,10 +1,25 @@
-import React from 'react'
+import useMovieGenres from '../hooks/useMovieGenres'
+import { NavLink, Link } from 'react-router-dom'
+import { Movie_Genre } from '../types/TMDB_Movie.types'
+import Row from 'react-bootstrap/Row'
 
-type Props = {}
+const MovieGenresPage = () => {
 
-const MovieGenresPage = (props: Props) => {
+	const { data } = useMovieGenres()
+
 	return (
-		<div>MovieGenresPage</div>
+		<>
+			<div className='category-page-hero'>
+				<h1>Movie Genres</h1>
+			</div>
+			<Row xs={1} sm={3} md={4} lg={5} className='g-3 genre-grid'>
+				{data && data.genres.map(genre =>
+					<Link to={`/${genre.name.toLowerCase().split(" ").join('-')}`}>
+						{genre.name}
+					</Link>
+				)}
+			</Row>
+		</>
 	)
 }
 

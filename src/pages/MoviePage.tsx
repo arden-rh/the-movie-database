@@ -21,6 +21,8 @@ const MoviePage = () => {
 			{data &&
 				<div>
 					<h1>{data.title}</h1>
+
+					<img src={`https://image.tmdb.org/t/p/w780/${data.backdrop_path}`} alt="" />
 				</div>
 			}
 		</>

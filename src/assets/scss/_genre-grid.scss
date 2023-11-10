@@ -1,0 +1,28 @@
+.genre-grid {
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+	margin: 3rem 0;
+	// flex-wrap: wrap;
+
+	a {
+		// background: linear-gradient(360deg, rgba(16, 4, 60, 1) 0%, rgba(34, 10, 121, 1) 35%, rgba(105, 80, 200, 1) 100%);
+		align-items: center;
+		background: rgb(16, 4, 60);
+		background: rgb(34, 12, 116);
+		// border: 1px solid #ffffff;
+		border-radius: 10px;
+		box-shadow: 5px 5px 5px 3px rgba(0,0,0,0.75);
+		color: #ffc300;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		max-width: 75vw;
+		padding: 2rem;
+		text-decoration: none;
+
+		&:hover {
+			background: #ffc300;
+		}
+	}
+}

@@ -12,7 +12,9 @@ const TopMoviesPage = () => {
 
 	return (
 		<>
-			<h1>Top Rated Movies of All Time</h1>
+			<div className='category-page-hero'>
+				<h1>Top Rated Movies of All Time</h1>
+			</div>
 
 			{isError && <span>Something went wrong with the request</span>}
 

@@ -12,7 +12,7 @@ import Navigation from './pages/partials/Navigation'
 import PopularMoviesPage from './pages/PopularMoviesPage'
 import TopMoviesPage from './pages/TopMoviesPage'
 
-function App() {
+const App = () => {
 
 	return (
 		<div id='App'>

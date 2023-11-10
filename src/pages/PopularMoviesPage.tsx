@@ -12,7 +12,9 @@ const PopularMoviesPage = () => {
 
 	return (
 		<>
-			<h1>The Trending Movies</h1>
+			<div className='category-page-hero'>
+				<h1>The Trending Movies</h1>
+			</div>
 
 			{isError && <span>Something went wrong with the request</span>}
 

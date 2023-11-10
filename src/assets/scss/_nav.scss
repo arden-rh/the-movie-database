@@ -1,0 +1,123 @@
+.navbar {
+	// background-color: #220a79;
+	background: rgb(16, 4, 60);
+	background: linear-gradient(360deg, rgba(16, 4, 60, 1) 0%, rgba(34, 10, 121, 1) 35%, rgba(62, 37, 155, 1) 100%);
+	// border-bottom: 1px #ffc300 solid;
+
+	.container {
+
+		.navbar-brand {
+			color: #ffc300;
+			font-family: $heading-font;
+			letter-spacing: 0.05rem;
+			text-shadow: 1px 1px 5px rgb(255, 72, 0);
+
+			span {
+				text-shadow: none;
+				margin-left: 0.25rem;
+			}
+
+			&:hover {
+				color: white;
+				text-shadow: none;
+			}
+		}
+
+		.nav-link {
+			color: #ffc300;
+			font-family: $heading-font;
+			letter-spacing: 0.05rem;
+
+
+			&:hover {
+				color: white;
+			}
+		}
+
+		.navbar-nav .nav-link.active {
+			color: #dd8511;
+			text-decoration: 1.5px underline;
+			text-underline-offset: 5px;
+
+		}
+
+		.navbar-toggler {
+			color: #ffc300;
+			border: 1px solid #ffc300;
+
+			.navbar-toggler-icon {
+				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(255, 195, 0)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+			}
+		}
+
+		.dropdown-menu {
+			border: 1px #ffc300 solid;
+			outline: 1px #ffc300 solid;
+			// background: rgb(6, 1, 24);
+			// border: none;
+			background: none;
+			// border-top: none;
+
+			.dropdown-item.active {
+				background: #dd8511;
+				color: white;
+				border: none;
+				// text-decoration: 1.5px underline;
+				// text-underline-offset: 5px;
+			}
+
+			a.dropdown-item {
+				text-transform: uppercase;
+				text-align: center;
+				letter-spacing: 0.1rem;
+				color: #ffc300;
+				font-size: 85%;
+				width: 100%;
+				border-bottom: 1px solid #ffc300;
+				padding: 10px 0;
+
+				&:first-child {
+					font-weight: 600;
+					letter-spacing: 0.15rem;
+				}
+
+				&:last-child {
+					border: none;
+				}
+
+				&:hover {
+					background: rgb(6, 1, 24);
+					color: white;
+				}
+			}
+		}
+
+		.dropdown-menu.show {
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+
+	.navbar {
+
+		.container {
+
+			.dropdown-menu {
+				border: 1px #ffc300 solid;
+				background: rgb(6, 1, 24);
+
+				a.dropdown-item {
+					font-size: 75%;
+				}
+
+				.dropdown-item.active {
+					// background: rgb(20, 4, 80);
+				}
+			}
+		}
+	}
+}

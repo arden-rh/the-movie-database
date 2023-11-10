@@ -12,9 +12,9 @@ const Navigation = () => {
 	} = useMovieGenres()
 
 	return (
-		<Navbar bg='dark' variant='dark' expand='md'>
+		<Navbar expand='lg'>
 			<Container>
-				<Navbar.Brand as={Link} to='/'>TMDB 📽️</Navbar.Brand>
+				<Navbar.Brand as={Link} to='/'>TMDB <span>📽️</span></Navbar.Brand>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
 					<Nav className='ms-auto'>
@@ -28,7 +28,6 @@ const Navigation = () => {
 							align={{ md: 'end' }}
 						>
 							<NavDropdown.Item as={NavLink} to='/movies/genres/'>All Genres</NavDropdown.Item>
-							<NavDropdown.Divider />
 							{data && data.genres.map(genre =>
 								<NavDropdown.Item as={NavLink} key={genre.id} to={`movies/genres/${genre.name.toLowerCase().split(" ").join('-')}`}>
 									{genre.name}

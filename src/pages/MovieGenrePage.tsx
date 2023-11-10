@@ -104,8 +104,10 @@ const MovieGenrePage = () => {
 	}, [movies, genre])
 
 	return (
-		<div>
-			<h1>Genre: <span className='text-capitalize'>{genre}</span></h1>
+		<>
+			<div className='category-page-hero'>
+				<h1>Genre: <span className='text-capitalize'>{genre}</span></h1>
+			</div>
 
 			{isError || errorMsg && !loadingMovies && <Alert variant='danger'>{errorMsg || "Something went wrong."}</Alert>}
 
@@ -123,7 +125,7 @@ const MovieGenrePage = () => {
 
 
 
-		</div>
+		</>
 	)
 }
 
