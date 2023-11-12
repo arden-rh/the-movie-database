@@ -15,7 +15,6 @@ const MovieGenrePage = () => {
 	const [searchParams, setSearchParams] = useSearchParams()
 	const navigate = useNavigate()
 
-
 	const paramsPage = searchParams.get('page')
 
 	const [errorMsg, setErrorMsg] = useState<string | null>(null)
@@ -98,7 +97,6 @@ const MovieGenrePage = () => {
 
 			if (e instanceof Error) {
 				setErrorMsg(e.message)
-
 			}
 		}
 
@@ -143,9 +141,13 @@ const MovieGenrePage = () => {
 
 	return (
 		<>
-			<div className='category-page-hero'>
+			{!moviesData && <div className='category-page-hero'>
+				<h1><span className='text-capitalize'>Genre Not Found</span></h1>
+			</div>}
+
+			{moviesData && <div className='category-page-hero'>
 				<h1>Genre: <span className='text-capitalize'>{genre}</span></h1>
-			</div>
+			</div>}
 
 			{isError || errorMsg && !loadingMovies && <Alert variant='danger'>{errorMsg || "Something went wrong."}</Alert>}
 
