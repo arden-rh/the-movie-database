@@ -106,7 +106,6 @@
 				padding: 0;
 				white-space: pre-wrap;
 
-
 				&.closed {
 					overflow: hidden;
 					max-height: 190px;
@@ -202,6 +201,7 @@
 
 					li {
 						width: 50%;
+						padding-right: 1rem;
 
 						&:last-child {
 							border-bottom: 1px solid $color-yellow;

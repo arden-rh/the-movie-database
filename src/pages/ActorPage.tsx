@@ -51,7 +51,7 @@ const ActorPage = () => {
 								<li><span className='title-small'>Link to to IMDb page:</span> <Link to={`https://www.imdb.com/name/${actor.imdb_id}/`} target='_blank'>{`https://www.imdb.com/name/${actor.imdb_id}`}</Link></li>
 							</ul>
 						</div>
-						{actor.biography.length < 0 &&
+						{actor.biography.length > 0 &&
 							<>
 							<h2 className='biography-title'>Biography</h2>
 								<div className='biography'>
