@@ -1,4 +1,4 @@
-import { Actor_Credit, Credit_Details } from "./TMDB_Person.types"
+import { Cast_Credit, Credit_Details} from "./TMDB_Person.types"
 
 type Dates = {
 	maximum: string
@@ -19,13 +19,14 @@ export type Movie = {
 	poster_path: string
 	release_date: string
 	runtime: number
+	tagline: string
 	title: string
 	vote_average: number
 }
 
 export type Movie_Cast_Credit = {
 	id: number
-	cast: Actor_Credit[]
+	cast: Cast_Credit[]
 }
 
 export type Movie_Credit = Omit<Movie, 'genres' | 'homepage' | 'imdb_id' > & Credit_Details & { genre_ids: number[] }

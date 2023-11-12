@@ -13,7 +13,7 @@ export type Actor = {
 	profile_path: string
 }
 
-export type Actor_Credit = Actor & Credit_Details & { cast_id: string}
+export type Cast_Credit = Actor & Credit_Details & { cast_id: string}
 
 export type Actor_Movie_Credits = {
 	cast: Movie_Credit[]
@@ -22,5 +22,6 @@ export type Actor_Movie_Credits = {
 
 export type Credit_Details = {
 	character: string
+	job?: string
 	credit_id: string
 }

@@ -27,9 +27,9 @@ const Navigation = () => {
 							drop='down'
 							align={{ md: 'end' }}
 						>
-							<NavDropdown.Item as={NavLink} to='/movies/genres/'>All Genres</NavDropdown.Item>
+							<NavDropdown.Item className='title-small' as={NavLink} to='/movies/genres/'>All Genres</NavDropdown.Item>
 							{data && data.genres.map(genre =>
-								<NavDropdown.Item as={NavLink} key={genre.id} to={`movies/genres/${genre.name.toLowerCase().split(" ").join('-')}`}>
+								<NavDropdown.Item className='title-small' as={NavLink} key={genre.id} to={`movies/genres/${genre.name.toLowerCase().split(" ").join('-')}`}>
 									{genre.name}
 								</NavDropdown.Item>)
 							}

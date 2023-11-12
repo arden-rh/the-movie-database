@@ -1,5 +1,14 @@
-$color-background: #393939;
+// Colors
 $color-white: #ffffff;
+$color-yellow: #ffc300;
+$color-orange-text: #dd8511;
+$color-background-dark-blue: #060118;
+$color-background-dark-blue-hover: #10043c;
 
+$text-shadow-orange: 1px 1px 5px #ff4800;
+
+$background-gradient-blue: linear-gradient(360deg, $color-background-dark-blue-hover 0%, #220a79 35%, #3e259b 100%);
+
+// Fonts
 $heading-font: 'Young Serif', Georgia, Times, serif;
 $primary-font: 'Inter', 'Gill Sans', 'Trebuchet MS', sans-serif;

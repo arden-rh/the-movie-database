@@ -15,7 +15,6 @@ const instance = axios.create({
 		'Content-Type': 'application/json',
 		'Accept': 'application/json',
 		'Authorization': API_KEY
-
 	}
 })
 

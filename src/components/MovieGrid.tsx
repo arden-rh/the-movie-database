@@ -24,18 +24,18 @@ const MovieGrid: React.FC<IProps> = ({ data }) => {
 					<Card
 						key={movie.id}
 					>
-						<Card.Img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+						<Card.Img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt='poster image for movie' />
 						<div className="card-info">
 							<div>
-								<span>Title:</span>
+								<span className='title-small'>Title:</span>
 								{movie.title}
 							</div>
 							<div>
-								<span>Release date:</span>
+								<span className='title-small'>Release date:</span>
 								{movie.release_date}
 							</div>
 							<div>
-								<span>Average vote:</span>
+								<span className='title-small'>Average vote:</span>
 								{movie.vote_average.toFixed(1)}
 							</div>
 						</div>

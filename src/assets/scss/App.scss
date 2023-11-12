@@ -1,11 +1,14 @@
 @import 'bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Young+Serif&display=swap');
 
+// Config
+@import 'config';
+
 // Individual files
 @import 'category-page';
-@import 'config';
 @import 'genre-grid';
 @import 'movie-grid';
+@import 'movie-page';
 @import 'nav';
 
 html {
@@ -19,22 +22,26 @@ body {
 	// background-color: #111747;
 	background: rgb(34, 12, 116);
 	background: linear-gradient(360deg, rgba(34, 12, 116, 1) 0%, rgba(12, 16, 51, 1) 40%, rgba(6, 1, 24, 1) 100%);
-	color: #ffc300;
+	color: $color-yellow;
 	font-family: $primary-font;
 }
 
 h1 {
-	color: $color-white;
-	color: #ffc300;
+	color: $color-yellow;
 	font-family: $heading-font;
 	letter-spacing: 0.075rem;
 	margin: 0;
 }
 
-#App {
+.title-small {
+	text-transform: uppercase;
+	color: $color-yellow;
+	letter-spacing: 0.1rem;
+}
 
+#App {
 	.page-body {
-		// padding: 0;
+		padding: 2rem 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

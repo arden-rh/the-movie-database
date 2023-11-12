@@ -9,10 +9,10 @@
 
 		.card {
 			padding: 0;
-			background: rgb(6, 1, 24);
-			border: 1px solid #ffc300;
-			outline: 1px solid #ffc300;
-			color: white;
+			background: $color-background-dark-blue;
+			border: 1px solid $color-yellow;
+			outline: 1px solid $color-yellow;
+			color: $color-white;
 			height: 100%;
 			// .card-img-overlay {
 			// 	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
@@ -26,7 +26,7 @@
 			// }
 
 			&:hover {
-				background-color: rgba(62, 37, 155, 0.149)
+				background: $color-background-dark-blue-hover;
 			}
 
 			img {
@@ -41,7 +41,7 @@
 				text-align: center;
 				align-items: stretch;
 				height: 100%;
-				border-top: 1px solid #ffc300;
+				border-top: 1px solid $color-yellow;
 				padding: 0.5rem 0 0.5rem;
 
 				div {
@@ -53,11 +53,8 @@
 					flex: 1;
 					font-size: 1.25rem;
 
-					span {
+					.title-small {
 						width: 100%;
-						text-transform: uppercase;
-						letter-spacing: 0.1rem;
-						color: #ffc300;
 						font-size: 75%;
 					}
 
