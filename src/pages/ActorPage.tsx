@@ -45,10 +45,10 @@ const ActorPage = () => {
 						<div className='grid-box actor-info'>
 							<ul>
 								<li><span className='title-small'>Name:</span> {actor.name}</li>
-								<li><span className='title-small'>Birthday:</span> {actor.birthday}</li>
-								{actor.deathday ? <li><span className='title-small'>Deathday:</span> {actor.deathday}</li> : ''}
-								<li><span className='title-small'>Also known as:</span> {actor.also_known_as}</li>
-								<li><span className='title-small'>Link to to IMDb page:</span> <Link to={`https://www.imdb.com/name/${actor.imdb_id}/`} target='_blank'>{`https://www.imdb.com/name/${actor.imdb_id}`}</Link></li>
+								{actor.birthday ? <li><span className='title-small'>Birthday:</span> {actor.birthday}</li>: ''}
+								{actor.deathday ? <li><span className='title-small'>Deathday:</span> {actor.deathday}</li>: ''}
+								{actor.also_known_as.length > 0 ? <li><span className='title-small'>Also known as:</span> {actor.also_known_as}</li>: ''}
+								{actor.imdb_id ? <li><span className='title-small'>Link to to IMDb page:</span> <Link to={`https://www.imdb.com/name/${actor.imdb_id}/`} target='_blank'>{`https://www.imdb.com/name/${actor.imdb_id}`}</Link></li> : ''}
 							</ul>
 						</div>
 						{actor.biography.length > 0 &&
