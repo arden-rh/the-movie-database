@@ -1,23 +1,4 @@
 .movie-page-container {
-	margin: 2rem 1rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	h1 {
-		text-shadow: $text-shadow-orange;
-		background: $background-gradient-blue;
-		border-radius: 10px;
-		display: flex;
-		min-height: 6rem;
-		outline: solid 1px $color-background-dark-blue;
-		width: 100%;
-		padding: 2rem;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-	}
-
 	.cover-img {
 		border: 2px solid $color-yellow;
 		border-radius: 5px;
@@ -124,11 +105,6 @@
 @media screen and (min-width: 992px) {
 
 	.movie-page-container {
-
-		h1 {
-			min-width: 50%;
-			max-width: fit-content;
-		}
 
 		.movie-page-grid {
 			border: 2px solid $color-yellow;
