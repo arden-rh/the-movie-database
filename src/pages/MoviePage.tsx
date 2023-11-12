@@ -30,8 +30,8 @@ const MoviePage = () => {
 			{isFetchingCredits && <p>Loading movie credits information...</p>}
 
 			{movie &&
-				<div className='movie-page-container'>
-					<h1>{movie.title}</h1>
+				<div className='movie-page-container page-container'>
+					<h1 className='single-page-h1'>{movie.title}</h1>
 					<Image className='cover-img' fluid src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`} alt="promo image for movie" />
 					<div className='movie-page-grid'>
 						<h2 className='movie-info-title'>Movie Information</h2>

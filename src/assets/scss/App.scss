@@ -34,6 +34,18 @@ h1 {
 	text-align: center;
 }
 
+.single-page-h1 {
+	align-items: center;
+	background: $background-gradient-blue;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	min-height: 6rem;
+	outline: 1px solid $color-background-dark-blue;
+	padding: 2rem;
+	width: 100%;
+}
+
 .btn {
 	background-color: $color-background-dark-blue;
 	border: 1px solid $color-yellow;
@@ -48,10 +60,14 @@ h1 {
 }
 
 .page-container {
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 2rem 1rem;
+}
+
+.not-found-container {
+	height: 100vh;
 }
 
 .title-small {
@@ -69,3 +85,9 @@ h1 {
 	}
 }
 
+@media screen and (min-width: 992px) {
+	.single-page-h1 {
+		min-width: 50%;
+		max-width: fit-content;
+	}
+}

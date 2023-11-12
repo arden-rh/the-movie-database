@@ -37,8 +37,8 @@ const ActorPage = () => {
 			{isFetchingCredits && <p>Loading actor credits information...</p>}
 
 			{actor &&
-				<div className='actor-page-container'>
-					<h1>{actor.name}</h1>
+				<div className='actor-page-container page-container'>
+					<h1 className='single-page-h1'>{actor.name}</h1>
 					<div className='actor-page-grid'>
 						<h2 className='actor-info-title'>Actor Information</h2>
 						<Image className='profile-img' fluid src={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`} alt="picture of actor" />
