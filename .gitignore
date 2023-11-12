@@ -25,3 +25,6 @@ dist-ssr
 *.env
 *-nogit
 
+
+# Local Netlify folder
+.netlify
