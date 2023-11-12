@@ -51,13 +51,17 @@ const ActorPage = () => {
 								<li><span className='title-small'>Link to to IMDb page:</span> <Link to={`https://www.imdb.com/name/${actor.imdb_id}/`} target='_blank'>{`https://www.imdb.com/name/${actor.imdb_id}`}</Link></li>
 							</ul>
 						</div>
-						<h2 className='biography-title'>Biography</h2>
-						<div className='biography'>
-							<p className={closed ? 'closed' : 'open'}>
-								{actor.biography}
-							</p>
-							<Button onClick={() => openBio()}>{closed ? 'Read more...' : 'Close'}</Button>
-						</div>
+						{actor.biography.length < 0 &&
+							<>
+							<h2 className='biography-title'>Biography</h2>
+								<div className='biography'>
+									<p className={closed ? 'closed' : 'open'}>
+										{actor.biography}
+									</p>
+									<Button onClick={() => openBio()}>{closed ? 'Read more...' : 'Close'}</Button>
+								</div>
+							</>
+							}
 
 						{isErrorCredits && <div className='grid-box'>Unable to render movie credits</div>}
 
