@@ -1,7 +1,6 @@
-import useMovieGenres from '../hooks/useMovieGenres'
-import { NavLink, Link } from 'react-router-dom'
-import { Movie_Genre } from '../types/TMDB_Movie.types'
+import { Link } from 'react-router-dom'
 import Row from 'react-bootstrap/Row'
+import useMovieGenres from '../hooks/useMovieGenres'
 
 const MovieGenresPage = () => {
 

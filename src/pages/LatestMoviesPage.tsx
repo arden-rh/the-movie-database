@@ -1,15 +1,9 @@
-import { getNowPlayingMovies } from '../services/TMDB_API'
-import { useQuery } from '@tanstack/react-query'
 import MovieGrid from '../components/MovieGrid'
-
+import useLatestMovies from '../hooks/useLatestMovies'
 
 const LatestMoviesPage = () => {
 
-	const useLastestMovies = (page: number) => {
-		return useQuery(['now_playing'], () => getNowPlayingMovies(page))
-	}
-
-	const { data, isError, isFetching } = useLastestMovies(1)
+	const { data, isError, isFetching } = useLatestMovies(1)
 
 	return (
 		<>

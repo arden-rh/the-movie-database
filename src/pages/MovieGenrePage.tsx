@@ -119,7 +119,6 @@ const MovieGenrePage = () => {
 			if (e instanceof Error) {
 				setErrorMsg(e.message)
 			}
-
 		}
 
 	}, [data, findGenreId])

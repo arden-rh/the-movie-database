@@ -1,0 +1,136 @@
+.home-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.category-page-hero {
+		max-width: fit-content;
+	}
+
+	.home-page-grid {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 0.5rem 1rem;
+		width: 100%;
+		color: $color-white;
+		margin: 1rem 0 0;
+
+		.hero-box {
+			grid-area: 3 / 1 / 4 / 6;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			.title-small {
+				text-align: center;
+				margin: 1rem 0 0.5rem;
+			}
+
+			.link-first-movie {
+				color: $color-white;
+				text-decoration: none;
+
+				h2 {
+					text-align: center;
+					font-family: $heading-font;
+					letter-spacing: 0.1rem;
+
+					&:hover {
+						color: $color-orange-text;
+					}
+				}
+			}
+		}
+
+		.row {
+			grid-area: 4 / 1 / 5 / 6;
+			display: flex;
+			justify-content: center;
+			gap: 0.5rem 1.5rem;
+			margin-top: 2rem;
+
+			a {
+				align-items: center;
+				background: $color-background-dark-blue;
+				border-radius: 10px;
+				border: 2px solid $color-yellow;
+				color: $color-yellow;
+				cursor: pointer;
+				display: flex;
+				font-family: $heading-font;
+				font-size: 1.2rem;
+				justify-content: center;
+				letter-spacing: 0.075rem;
+				max-width: 75vw;
+				padding: 2rem;
+				text-decoration: none;
+				text-align: center;
+
+
+				&:hover {
+					background: $color-background-dark-blue-hover;
+					color: $color-white;
+				}
+			}
+		}
+
+		.link-cover-photo {
+			grid-area: 1 / 1 / 3 / 6;
+			max-width: 90%;
+			margin: 0 auto;
+
+			.cover-img {
+				border: 2px solid $color-yellow;
+				border-radius: 5px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.home-page {
+		min-height: 100vh;
+	}
+}
+
+@media screen and (min-width: 992px) {
+
+	.home-page {
+
+		.home-page-grid {
+			.hero-box {
+				grid-area: 1 / 5 / 3 / 6;
+
+				.link-first-movie {
+					color: $color-white;
+					text-decoration: none;
+
+					h2 {
+						text-align: center;
+						font-family: $heading-font;
+						letter-spacing: 0.1rem;
+
+						&:hover {
+							color: $color-orange-text;
+						}
+					}
+				}
+
+				.title-small {
+					text-align: center;
+					margin: 1rem 0 0.5rem;
+				}
+			}
+
+			.row {
+				margin: 0 0.5rem;
+				justify-content: space-between;
+			}
+
+			.link-cover-photo {
+				grid-area: 1 / 1 / 3 / 5;
+				max-width: 95%;
+			}
+		}
+	}
+}

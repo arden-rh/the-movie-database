@@ -8,6 +8,7 @@
 @import 'actor-page';
 @import 'category-page';
 @import 'genre-grid';
+@import 'home-page';
 @import 'movie-grid';
 @import 'movie-page';
 @import 'nav';
@@ -29,6 +30,8 @@ h1 {
 	font-family: $heading-font;
 	letter-spacing: 0.075rem;
 	margin: 0;
+	text-shadow: $text-shadow-orange;
+	text-align: center;
 }
 
 .btn {
@@ -63,15 +66,6 @@ h1 {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-	}
-}
-
-@media screen and (min-width: 992px) {
-
-	#App {
-		.page-body {
-			// padding: 2rem 0;
-		}
 	}
 }
 

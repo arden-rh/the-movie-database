@@ -5,7 +5,6 @@
 	align-items: center;
 
 	h1 {
-		text-shadow: $text-shadow-orange;
 		background: $background-gradient-blue;
 		border-radius: 10px;
 		display: flex;
@@ -15,7 +14,6 @@
 		padding: 2rem;
 		align-items: center;
 		justify-content: center;
-		text-align: center;
 	}
 
 	.actor-page-grid {
@@ -90,7 +88,6 @@
 			padding: 1rem;
 			border: 2px solid $color-orange-text;
 			border-radius: 5px;
-			// overflow-y: auto;
 
 			.btn {
 				margin-top: 1rem;

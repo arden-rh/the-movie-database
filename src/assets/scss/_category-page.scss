@@ -1,20 +1,16 @@
 .category-page-hero {
 	align-items: center;
-	// background: #10043c;
 	background: $background-gradient-blue;
 	border-radius: 10px;
 	display: flex;
 	min-height: 6rem;
 	justify-content: center;
 	margin: 2rem;
-	outline: solid 1px $color-background-dark-blue;
+	outline: 1px solid $color-background-dark-blue;
 	min-width: 50%;
 	padding: 0 2rem;
-	// outline: solid 1px #ffc300;
 
 	h1 {
-		text-align: center;
 		margin: 1rem 0.5rem;
-		text-shadow: $text-shadow-orange;
 	}
 }
