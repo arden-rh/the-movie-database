@@ -29,7 +29,7 @@ const Navigation = () => {
 						>
 							<NavDropdown.Item className='title-small' as={NavLink} to='/movies/genres/'>All Genres</NavDropdown.Item>
 							{data && data.genres.map(genre =>
-								<NavDropdown.Item className='title-small' as={NavLink} key={genre.id} to={`movies/genres/${genre.name.toLowerCase().split(" ").join('-')}`}>
+								<NavDropdown.Item className='title-small' as={NavLink} key={genre.id} to={`movies/genres/${genre.name.toLowerCase().split(" ").join('-')}?page=1`}>
 									{genre.name}
 								</NavDropdown.Item>)
 							}

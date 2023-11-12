@@ -5,22 +5,20 @@
 @import 'config';
 
 // Individual files
+@import 'actor-page';
 @import 'category-page';
 @import 'genre-grid';
 @import 'movie-grid';
 @import 'movie-page';
 @import 'nav';
+@import 'pagination';
 
 html {
-	background: rgb(34, 12, 116);
-	// background: linear-gradient(360deg, rgba(34, 12, 116, 1) 0%, rgba(12, 16, 51, 1) 40%, rgba(7, 10, 31, 1) 100%);
-
+	background: $color-background-dark-blue-hover;
 }
 
 body {
-	// background-color: $color-background;
-	// background-color: #111747;
-	background: rgb(34, 12, 116);
+	background: $color-background-dark-blue-hover;
 	background: linear-gradient(360deg, rgba(34, 12, 116, 1) 0%, rgba(12, 16, 51, 1) 40%, rgba(6, 1, 24, 1) 100%);
 	color: $color-yellow;
 	font-family: $primary-font;
@@ -33,6 +31,26 @@ h1 {
 	margin: 0;
 }
 
+.btn {
+	background-color: $color-background-dark-blue;
+	border: 1px solid $color-yellow;
+	text-transform: uppercase;
+	color: $color-yellow;
+	letter-spacing: 0.1rem;
+
+	&:hover {
+		background-color: $color-background-dark-blue-hover;
+		border: 1px solid $color-yellow;
+	}
+}
+
+.page-container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .title-small {
 	text-transform: uppercase;
 	color: $color-yellow;
@@ -41,9 +59,19 @@ h1 {
 
 #App {
 	.page-body {
-		padding: 2rem 0;
+		padding-bottom: 2rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 }
+
+@media screen and (min-width: 992px) {
+
+	#App {
+		.page-body {
+			// padding: 2rem 0;
+		}
+	}
+}
+

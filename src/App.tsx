@@ -9,6 +9,7 @@ import MovieGenrePage from './pages/MovieGenrePage'
 import MovieGenresPage from './pages/MovieGenresPage'
 import MoviePage from './pages/MoviePage'
 import Navigation from './pages/partials/Navigation'
+import NotFoundPage from './pages/NotFoundPage'
 import PopularMoviesPage from './pages/PopularMoviesPage'
 import TopMoviesPage from './pages/TopMoviesPage'
 
@@ -37,7 +38,7 @@ const App = () => {
 
 					<Route path='/movie/:id' element={<MoviePage />} />
 
-					{/* <Route path="*" element={<NotFound />} /> */}
+					<Route path="*" element={<NotFoundPage />} />
 				</Routes>
 			</Container>
 

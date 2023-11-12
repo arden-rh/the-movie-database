@@ -4,10 +4,12 @@ const HomePage = () => {
 
 
 	return (
-		<>
-			<h1>Home Page</h1>
+		<div className="page-container">
+			<div className='category-page-hero'>
+				<h1>Home Page</h1>
+			</div>
 
-		</>
+		</div>
 	)
 }
 

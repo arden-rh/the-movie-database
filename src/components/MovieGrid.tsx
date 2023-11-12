@@ -1,7 +1,6 @@
 import { Movie } from '../types/TMDB_Movie.types'
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Alert from 'react-bootstrap/Alert'
-import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 
@@ -20,7 +19,7 @@ const MovieGrid: React.FC<IProps> = ({ data }) => {
 	return (
 		<Row xs={1} sm={3} md={4} lg={5} className='g-3 movie-grid'>
 			{data.map(movie => (
-				<Link to={`/movie/${movie.id}`}>
+				<Link to={`/movie/${movie.id}`} key={movie.id}>
 					<Card
 						key={movie.id}
 					>

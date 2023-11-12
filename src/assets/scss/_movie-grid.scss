@@ -1,6 +1,6 @@
 .movie-grid {
 	justify-content: center;
-	margin: 0 2rem 3rem;
+	margin: 0 2rem 1rem;
 
 	a {
 		text-decoration: none;
@@ -8,22 +8,12 @@
 		margin: 2rem 1rem;
 
 		.card {
-			padding: 0;
 			background: $color-background-dark-blue;
 			border: 1px solid $color-yellow;
-			outline: 1px solid $color-yellow;
 			color: $color-white;
 			height: 100%;
-			// .card-img-overlay {
-			// 	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
-			// 	display: none;
-			// 	align-items: end;
-			// 	padding-bottom: 6rem;
-
-			// 	&:hover {
-			// 		display: flex;
-			// 	}
-			// }
+			outline: 1px solid $color-yellow;
+			padding: 0;
 
 			&:hover {
 				background: $color-background-dark-blue-hover;
@@ -85,13 +75,13 @@
 	}
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
 	.movie-grid {
 		a {
 			.card {
 				.card-info {
 					div {
-						font-size: 0.9rem;
+						font-size: 1.2rem;
 					}
 				}
 			}

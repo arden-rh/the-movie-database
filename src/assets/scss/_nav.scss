@@ -1,8 +1,5 @@
 .navbar {
-	// background-color: #220a79;
-	// background: #10043c;
 	background: $background-gradient-blue;
-	// border-bottom: 1px #ffc300 solid;
 
 	.container {
 		.navbar-brand {
@@ -37,7 +34,6 @@
 			color: $color-orange-text;
 			text-decoration: 1.5px underline;
 			text-underline-offset: 5px;
-
 		}
 
 		.navbar-toggler {
@@ -57,19 +53,21 @@
 		}
 
 		.dropdown-menu {
-			// border: 1px solid $color-yellow;
-			// outline: 1px solid $color-yellow;
-			// background: rgb(6, 1, 24);
 			border: none;
 			background: none;
-			// border-top: none;
 
 			.dropdown-item.active {
 				background: $color-orange-text;
 				color: $color-white;
 				border: none;
-				// text-decoration: 1.5px underline;
-				// text-underline-offset: 5px;
+
+				&:first-child {
+					border-radius: 5px 5px 0 0;
+				}
+
+				&:last-child {
+					border-radius: 0 0 5px 5px;
+				}
 			}
 
 			a.dropdown-item {
@@ -92,6 +90,14 @@
 				&:hover {
 					background: $color-background-dark-blue-hover;
 					color: $color-white;
+
+					&:first-child {
+						border-radius: 5px 5px 0 0;
+					}
+
+					&:last-child {
+						border-radius: 0 0 5px 5px;
+					}
 				}
 			}
 		}

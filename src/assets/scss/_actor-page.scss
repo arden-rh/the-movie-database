@@ -1,0 +1,245 @@
+.actor-page-container {
+	margin: 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		text-shadow: $text-shadow-orange;
+		background: $background-gradient-blue;
+		border-radius: 10px;
+		display: flex;
+		min-height: 6rem;
+		outline: solid 1px $color-background-dark-blue;
+		width: 100%;
+		padding: 2rem;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.actor-page-grid {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 0.5rem 1rem;
+		width: 100%;
+		color: $color-white;
+		margin: 2rem 0 0;
+
+		h2 {
+			margin: 1rem 0 0.5rem;
+		}
+
+		.grid-box {
+			border: 2px solid $color-yellow;
+			border-radius: 5px;
+			background: $color-background-dark-blue;
+			padding: 0.5rem 1rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				li {
+					width: 100%;
+					border-bottom: 1px solid $color-yellow;
+					padding: 0.75rem 0;
+					display: flex;
+					flex-direction: column;
+
+					&:last-child {
+						border: none;
+					}
+
+					.title-small {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.profile-img {
+			border-radius: 5px;
+			border: 2px solid $color-yellow;
+			grid-area: 1 / 1 / 2 / 7;
+			margin-bottom: 1rem;
+		}
+
+		.actor-info {
+			grid-area: 2 / 1 / 4 / 7;
+
+			a {
+				color: #4d2cc4;
+
+				&:hover {
+					color: $color-orange-text;
+				}
+			}
+		}
+
+		.actor-info-title {
+			grid-area: 1 / 1 / 2 / 7;
+		}
+
+		.biography {
+			grid-area: 5 / 1 / 6 / 7;
+			padding: 1rem;
+			border: 2px solid $color-orange-text;
+			border-radius: 5px;
+			// overflow-y: auto;
+
+			.btn {
+				margin-top: 1rem;
+				background-color: $color-background-dark-blue;
+				border: 1px solid $color-orange-text;
+
+				&:hover {
+					background-color: $color-background-dark-blue-hover;
+				}
+			}
+
+			p {
+				margin: 0;
+				line-height: 1.5rem;
+				font-size: 0.9rem;
+				padding: 0;
+				white-space: pre-wrap;
+
+
+				&.closed {
+					overflow: hidden;
+					max-height: 190px;
+				}
+
+				&.open {
+					overflow: visible;
+				}
+			}
+		}
+
+		.biography-title {
+			grid-area: 4 / 1 / 5 / 7;
+		}
+
+		.movie-credits {
+			grid-area: 7 / 1 / 12 / 7;
+
+			a {
+				text-decoration: none;
+				color: inherit;
+
+				&:hover {
+					color: $color-orange-text;
+
+				}
+			}
+
+			h3 {
+				font-size: 1.4rem;
+				font-weight: 300;
+				margin: 0.5rem 0 0.3rem;
+			}
+		}
+
+		.credits-title {
+			grid-area: 6 / 1 / 7 / 7;
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+
+	.actor-page-container {
+
+		h1 {
+			min-width: 50%;
+			max-width: fit-content;
+		}
+
+		.actor-page-grid {
+			border: 2px solid $color-yellow;
+			border-radius: 5px;
+			background: $color-background-dark-blue;
+			padding: 1.5rem;
+			gap: 0.5rem 1.5rem;
+
+			.profile-img {
+				grid-area: 1 / 5 / 3 / 7;
+				border: none;
+				margin-bottom: 0;
+			}
+
+			.grid-box {
+				border: none;
+				background: none;
+				padding: 0;
+			}
+
+			.actor-info {
+				grid-area: 2 / 1 / 3 / 5;
+			}
+
+			.actor-info-title {
+				grid-area: 1 / 1 / 2 / 5;
+			}
+
+			.biography {
+				grid-area: 5 / 1 / 6 / 5;
+				border: 1px solid $color-orange-text;
+			}
+
+			.biography-title {
+				grid-area: 4 / 1 / 5 / 7;
+			}
+
+			.movie-credits {
+				grid-area: 7 / 1 / 12 / 7;
+
+				ul {
+					display: flex;
+					flex-wrap: wrap;
+
+					li {
+						width: 50%;
+
+						&:last-child {
+							border-bottom: 1px solid $color-yellow;
+						}
+
+						&:nth-child(odd):last-child {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			.credits-title {
+				grid-area: 6 / 1 / 7 / 7;
+			}
+
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+
+	.actor-page-container {
+		.cover-img {
+			max-width: 80%;
+			margin-bottom: 3rem;
+		}
+
+		.actor-page-grid {
+			border: 2px solid $color-yellow;
+			border-radius: 5px;
+			background: $color-background-dark-blue;
+			padding: 1rem;
+			max-width: 80%;
+		}
+	}
+
+}

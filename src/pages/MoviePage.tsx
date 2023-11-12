@@ -1,23 +1,28 @@
+import { Link, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import { useParams } from 'react-router'
 import Alert from 'react-bootstrap/Alert'
+import GoBackBtn from '../components/GoBackBtn'
 import Image from 'react-bootstrap/Image'
 import useMovie from '../hooks/useMovie'
 import useMovieCredits from '../hooks/useMovieCredits'
-import { Link } from 'react-router-dom'
 
 const MoviePage = () => {
 
 	const { id } = useParams()
+	const navigate = useNavigate()
 
 	const movieId = Number(id)
 
 	const { data: movie, isError, isFetching } = useMovie(movieId)
 	const { data: movie_credits, isError: isErrorCredits, isFetching: isFetchingCredits } = useMovieCredits(movieId)
 
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 
 	return (
 		<>
-
 			{isError && <Alert variant='danger'>Something went wrong with the request.</Alert>}
 
 			{isFetching && <p>Loading movie information...</p>}
@@ -46,23 +51,16 @@ const MoviePage = () => {
 								{movie.overview}
 							</p>
 						</div>
+
+						{isErrorCredits && <div className='grid-box'>Unable to render movie credits</div>}
+
 						{movie_credits && <>
 							<h2 className='credits-title'>Credits</h2>
-							{/*
-							<div className='grid-box crew'>
-								<ul>
-									{movie_credits.cast.find(crew =>
-										<li>Director: {crew.job === 'Director'}</li>
-									)}
-								</ul>
-							</div>
-							*/}
-
 							<div className='grid-box cast'>
 								<h3>Characters</h3>
 								<ul>
 									{movie_credits.cast.map(actor =>
-										<li><span className='title-small'>{actor.character}</span> <Link to={`/actor/${actor.id}`}>{actor.name}</Link></li>
+										<li key={actor.cast_id}><span className='title-small'>{actor.character}</span> <Link to={`/actor/${actor.id}`}>{actor.name}</Link></li>
 									)}
 								</ul>
 							</div>
@@ -70,6 +68,9 @@ const MoviePage = () => {
 					</div>
 				</div>
 			}
+
+			<GoBackBtn onGoBackOnePage={() => navigate(-1)} />
+
 		</>
 	)
 }

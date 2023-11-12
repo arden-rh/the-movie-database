@@ -14,7 +14,7 @@ const MovieGenresPage = () => {
 			</div>
 			<Row xs={1} sm={3} md={4} lg={5} className='g-3 genre-grid'>
 				{data && data.genres.map(genre =>
-					<Link to={`/${genre.name.toLowerCase().split(" ").join('-')}`}>
+					<Link key={genre.id} to={`${genre.name.toLowerCase().split(" ").join('-')}?page=1`}>
 						{genre.name}
 					</Link>
 				)}

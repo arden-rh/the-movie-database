@@ -1,0 +1,23 @@
+.pagination {
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+	margin: 0.8rem 0 2.5rem;
+	width: 100%;
+	max-width: 300px;
+
+	.btn-primary {
+		background-color: $color-background-dark-blue;
+		border: 1px solid $color-yellow;
+		color: $color-yellow;
+
+		&:hover {
+			background-color: $color-background-dark-blue-hover;
+			color: $color-white;
+		}
+	}
+
+	.page {
+		margin: 0 1rem;
+	}
+}
