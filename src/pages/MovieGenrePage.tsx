@@ -3,6 +3,7 @@ import { Movie_Genre, Movie_Results } from '../types/TMDB_Movie.types'
 import { useCallback, useEffect, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from "react-router-dom"
 import Alert from 'react-bootstrap/Alert'
+import GoBackBtn from '../components/GoBackBtn'
 import MovieGrid from '../components/MovieGrid'
 import Pagination from '../components/Pagination'
 import useMovieGenres from '../hooks/useMovieGenres'
@@ -121,11 +122,10 @@ const MovieGenrePage = () => {
 		} catch (e) {
 			if (e instanceof Error) {
 				setErrorMsg(e.message)
-				navigate('/movies/genres')
 			}
 		}
 
-	}, [data, findGenreId, navigate])
+	}, [data, findGenreId])
 
 	useEffect(() => {
 
@@ -162,6 +162,8 @@ const MovieGenrePage = () => {
 				onGoToFirstPage={goToFirstPage}
 				onGoToLastPage={goToLastPage}
 			/>}
+
+			<GoBackBtn onGoBackOnePage={() => navigate(-1)} />
 
 		</>
 	)
