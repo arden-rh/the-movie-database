@@ -1,7 +1,7 @@
 import { getMoviesByGenre } from '../services/TMDB_API'
 import { Movie_Genre, Movie_Results } from '../types/TMDB_Movie.types'
 import { useCallback, useEffect, useState } from 'react'
-import { useParams, useSearchParams } from "react-router-dom"
+import { useNavigate, useParams, useSearchParams } from "react-router-dom"
 import Alert from 'react-bootstrap/Alert'
 import MovieGrid from '../components/MovieGrid'
 import Pagination from '../components/Pagination'
@@ -12,6 +12,8 @@ const MovieGenrePage = () => {
 
 	const { genre } = useParams()
 	const [searchParams, setSearchParams] = useSearchParams()
+	const navigate = useNavigate()
+
 
 	const paramsPage = searchParams.get('page')
 
@@ -81,8 +83,8 @@ const MovieGenrePage = () => {
 		setErrorMsg(null)
 
 		try {
-			const chosenGenre = data.find((movie) => {
-				return movie.name.toLowerCase().split(" ").join('-') === movieGenre
+			const chosenGenre = data.find((genre) => {
+				return genre.name.toLowerCase().split(" ").join('-') === movieGenre
 			})
 
 			if (!chosenGenre) {
@@ -95,6 +97,7 @@ const MovieGenrePage = () => {
 
 			if (e instanceof Error) {
 				setErrorMsg(e.message)
+
 			}
 		}
 
@@ -118,10 +121,11 @@ const MovieGenrePage = () => {
 		} catch (e) {
 			if (e instanceof Error) {
 				setErrorMsg(e.message)
+				navigate('/movies/genres')
 			}
 		}
 
-	}, [data, findGenreId])
+	}, [data, findGenreId, navigate])
 
 	useEffect(() => {
 
